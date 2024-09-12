@@ -2,7 +2,7 @@
 
 function calculateBMI() {
 
-    const height = parseFloat(document.getElementById("height").value);
+    const height = parseFloat(document.getElementById("height").value) / 100;
     const weight = parseFloat(document.getElementById("weight").value);
     
     if (isNaN(height) || isNaN(weight) || height <= 0 || weight <= 0) {
@@ -20,7 +20,7 @@ function calculateBMI() {
     } else if (bmi >= 25 && bmi < 29.9) {
         category = "Overweight";
     } else {
-        category = "Fat";
+        category = "Obese";
     }
     
     document.getElementById("result").innerText = `Bmi: ${bmi.toFixed(2)} (${category})`;
